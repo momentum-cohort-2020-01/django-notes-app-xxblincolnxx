@@ -21,6 +21,8 @@ from core import views
 urlpatterns = [
     path('', views.notes_list, name ='notes_list'),
     path('notes/<int:pk>', views.notes_detail, name='notes_detail'),
+    path('new_note/', views.new_note, name = 'new_note'),
+    path('notes/<int:pk>/edit/', views.edit_note, name = 'edit_note'),
+    path('notes/<int:pk>/remove/', views.remove_note, name='remove_note'),
     path('admin/', admin.site.urls),
 ]
-

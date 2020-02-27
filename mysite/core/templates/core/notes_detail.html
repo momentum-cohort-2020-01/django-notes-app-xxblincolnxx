@@ -2,4 +2,6 @@
 {% block content %}
 <a style = 'font-weight: bold;' href='/'> HOME </a>
 <dl><dt>{{note.title}}</dt><dd>{{note.body}}</dd></dl>
+<a href="{% url 'edit_note' note.pk %}">EDIT</a>
+<a style="color:red" href="{% url 'remove_note' note.pk %}">DELETE</a>
 {% endblock %}

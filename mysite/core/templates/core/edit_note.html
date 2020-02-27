@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<a style = 'font-weight: bold;' href='/'> HOME </a>
+<h1 style="font-weight: bold;">Create New Note</h1>
+{% endblock %}
+
+{% block content %}
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ note.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>
+<!-- <a href='/'>HOME</a> -->
+{% endblock %}
+

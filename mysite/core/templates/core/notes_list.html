@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<h2>Note List</h2>
+<h1 style="font-weight: bold;">Note List</h1>
 {% endblock %}
 
 {% block content %}
+
 {% for note in notes %}
-<div class="note" id="{{note.pk}}">
+<div id="{{note.pk}}">
   <a style="font-weight: bold;" href="{% url 'notes_detail' note.pk %}">{{ note.title }}</a>
+  <a href="{% url 'edit_note' note.pk %}" class='button'>EDIT</a>
+  <a href="{% url 'remove_note' note.pk %}" class = 'button button-danger'>DELETE</a>
   <p>{{ note.body }}</p>
 </div>
 {% endfor %}
+
+<a class = 'button button-success' href='/new_note'>CREATE NEW NOTE</a>
 {% endblock %}
 
